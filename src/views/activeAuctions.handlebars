@@ -1,0 +1,21 @@
+ <h1>Lista aktualnie trwających przetargów</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Lp.</th>
+                <th>Nazwa/Tytuł Przedmiotu Przetargu</th>
+                <th>Data i Godzina Rozpoczęcia</th>
+                <th>Data i Godzina Zakończenia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each activeAuctions}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{formatDate this.startDateTime}}</td>
+                    <td>{{formatDate this.endDateTime}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
