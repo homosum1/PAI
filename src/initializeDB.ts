@@ -1,4 +1,4 @@
-import { Auction } from './models/auction';
+import { Auction } from './Auction/auction';
 import { sequelize } from './database';
 
 interface AuctionDataSchema {

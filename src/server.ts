@@ -3,7 +3,7 @@ import { engine } from 'express-handlebars';
 import path from 'path';
 
 import { sequelize } from './database';
-import { Auction } from './models/auction';
+import { Auction } from './Auction/auction';
 import { Op } from 'sequelize';
 
 const app = express();
