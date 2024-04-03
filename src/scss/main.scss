@@ -78,6 +78,36 @@ body {
                     margin-bottom: 15px;
                 }
             }
+
+            &__array {
+                padding: 15px;
+                max-width: 681px !important;
+
+                border: 1px solid #bfbfc0;
+                background-color: #d9e0e3;
+
+                margin-bottom: 30px;
+
+                th {
+                    text-align: left;
+                    padding-right: 20px;
+                    padding-bottom: 10px;
+                }
+
+                td {
+                    padding-right: 20px;
+                }
+
+                a {
+                    color: blue;
+
+                    cursor: pointer;
+            
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     }
 }

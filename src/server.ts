@@ -3,8 +3,7 @@ import { engine } from 'express-handlebars';
 import path from 'path';
 
 import { sequelize } from './database';
-import { Auction } from './Auction/auction';
-import { Op } from 'sequelize';
+import AuctionRouter from './Auction/AuctionRouter';
 
 const app = express();
 
@@ -35,29 +34,12 @@ sequelize.sync().then(() => {
     console.error('Unable to sync database 💥', err);
 });
 
+
 app.get('/', (req: Request, res: Response) => {
     res.render('home'); 
 });
 
-app.get('/active-auctions', async (req: Request, res: Response) => {
-    try {
-        const currentDate = new Date();
-        const activeAuctions = await Auction.findAll({
-            where: {
-                startDateTime: {
-                    [Op.lte]: currentDate,
-                },
-                endDateTime: {
-                    [Op.gte]: currentDate,
-                }
-            }
-        });
-
-        res.render('activeAuctions', { activeAuctions });
-    } catch (error) {
-        res.status(500).send('Error fetching active auctions');
-    }
-});
+app.use('/auctions', AuctionRouter);  
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT} ✅`));

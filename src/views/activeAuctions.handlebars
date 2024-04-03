@@ -1,21 +1,27 @@
- <h1>Lista aktualnie trwających przetargów</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Lp.</th>
-                <th>Nazwa/Tytuł Przedmiotu Przetargu</th>
-                <th>Data i Godzina Rozpoczęcia</th>
-                <th>Data i Godzina Zakończenia</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each activeAuctions}}
-                <tr>
-                    <td>{{@index}}</td>
-                    <td>{{this.title}}</td>
-                    <td>{{formatDate this.startDateTime}}</td>
-                    <td>{{formatDate this.endDateTime}}</td>
-                </tr>
-            {{/each}}
-        </tbody>
-    </table>
+<div class="main__landing">
+    <div class="main__landing__description">
+        <div class="main__landing__description__header">Lista aktualnie trwających przetargów:</div>
+        <div class="main__landing__description__array">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lp.</th>
+                        <th>Nazwa przetargu</th>
+                        <th>Data i Godzina Rozpoczęcia</th>
+                        <th>Data i Godzina Zakończenia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each activeAuctions}}
+                        <tr>
+                            <td>{{@index}}</td>
+                            <td><a href="/auctions/auction/{{this.id}}">{{this.title}}</a></td>
+                            <td>{{formatDate this.startDateTime}}</td>
+                            <td>{{formatDate this.endDateTime}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
