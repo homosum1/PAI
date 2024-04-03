@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { Op } from "sequelize";
-import { Auction } from "./AuctionModel";
+import { Auction, AuctionInterface } from "./AuctionModel";
 
 export const getActiveAuctions = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -26,10 +26,11 @@ export const getActiveAuctions = async (req: Request, res: Response, next: NextF
 export const getAuction = async (req: Request, res: Response) => {
     try {
       const auctionId = req.params.id;
-      const auction = await Auction.findByPk(auctionId);
+      const auction = await Auction.findByPk(auctionId) as AuctionInterface | null;
   
       if (auction) {
-        res.json(auction);
+        const isAuctionActive = auction.endDateTime > new Date();
+        res.render('auction', { auction, isAuctionActive });
       } else {
         res.status(404).send('Nie znaleziono przetargu o podanym ID');
       }

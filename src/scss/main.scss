@@ -108,6 +108,21 @@ body {
                     }
                 }
             }
+
+            &__data-box {
+                padding: 15px;
+                max-width: 681px !important;
+
+                border: 1px solid #bfbfc0;
+                background-color: #d9e0e3;
+
+                margin-bottom: 30px;
+
+                .material-symbols-outlined {
+                    position: relative;
+                    top: 4px;
+                }
+            }
         }
     }
 }

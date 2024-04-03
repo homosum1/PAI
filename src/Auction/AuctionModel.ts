@@ -1,6 +1,16 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../database';
 
+export interface AuctionInterface {
+  id?: number;
+  title: string;
+  description: string;
+  organizationName: string;
+  startDateTime: Date;
+  endDateTime: Date;
+  maximumValue: number;
+}
+
 export const Auction = sequelize.define('Auction', {
 
   title: {
