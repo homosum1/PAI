@@ -1,6 +1,16 @@
-    <h1>Submit Offer for Auction: {{auction.title}}</h1>
-    <form action="/auction/{{auction.id}}/submit-offer" method="post">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="number" name="value" placeholder="Offer Value" required />
-        <button type="submit">Submit Offer</button>
-    </form>
+    
+<div class="main__landing">
+
+    <div class="main__landing__description">
+        <div class="main__landing__description__header">Zgłoszenie do przetargu: {{auction.title}}</div>
+        
+        <div class="main__landing__description__form-box">
+        <form action="/offer/submit-offer/{{auction.id}}" method="post">
+            <input type="text" name="name" placeholder="składający" required />
+            <input type="number" name="value" placeholder="wartość oferty" required />
+            <button type="submit">Submit Offer</button>
+        </form>
+        </div>
+    </div>
+
+</div>

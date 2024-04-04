@@ -123,6 +123,19 @@ body {
                     top: 4px;
                 }
             }
+
+            &__form-box {
+                padding: 15px;
+                max-width: 681px !important;
+
+
+                border: 1px solid #bfbfc0;
+                background-color: #d9e0e3;
+
+                input {
+                    margin-right: 20px;
+                }
+            }
         }
     }
 }

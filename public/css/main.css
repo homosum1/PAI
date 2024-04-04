@@ -77,3 +77,10 @@ body {
         .main__landing__description__data-box .material-symbols-outlined {
           position: relative;
           top: 4px; }
+      .main__landing__description__form-box {
+        padding: 15px;
+        max-width: 681px !important;
+        border: 1px solid #bfbfc0;
+        background-color: #d9e0e3; }
+        .main__landing__description__form-box input {
+          margin-right: 20px; }
