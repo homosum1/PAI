@@ -89,3 +89,24 @@ export const getInactiveAuction = async (req: Request, res: Response) => {
       res.status(500).send('DB error');
   }
 };
+
+
+export const addAuction = async (req: Request, res: Response) => {
+    try {
+        const { title, organizationName, description, startDateTime, endDateTime, maximumValue } = req.body;
+
+        await Auction.create({
+            title,
+            organizationName,
+            description,
+            startDateTime,
+            endDateTime,
+            maximumValue
+        });
+
+        const message = "Twoja oferta została dodana";
+        res.render('message', { message });
+    } catch (error) {
+        res.status(500).send('DB error');
+    }
+};

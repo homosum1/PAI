@@ -135,6 +135,26 @@ body {
                 input {
                     margin-right: 20px;
                 }
+
+                &--boxed {
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+                    input {
+                        display: block;
+                        margin-bottom: 20px;
+
+                        width: 50%;
+                    }
+
+                    textarea {
+                        margin-bottom: 20px;
+                        resize: none;
+
+                        width: 50%;
+                    }
+                }
             }
         }
     }

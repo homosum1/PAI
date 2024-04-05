@@ -1,0 +1,34 @@
+<div class="main__landing">
+
+    <div class="main__landing__description">
+
+        <div class="main__landing__description__header">
+            Dodaj Nowy Przetarg:
+        </div>
+        
+        <div class="main__landing__description__form-box main__landing__description__form-box--boxed">
+            <form action="/auctions/add-auction-form" method="post">
+                <label for="title">Nazwa Przedmiotu Przetargu:</label>
+                <input type="text" id="title" name="title" required />
+
+                <label for="organizationName">Instytucja Zamawiająca:</label>
+                <input type="text" id="organizationName" name="organizationName" required />
+
+                <label for="description">Opis Przedmiotu Przetargu:</label>
+                <textarea rows="4" id="description" name="description" required></textarea>
+
+                <label for="startDateTime">Data i Godzina Rozpoczęcia:</label>
+                <input type="datetime-local" id="startDateTime" name="startDateTime" required />
+
+                <label for="endDateTime">Data i Godzina Zakończenia:</label>
+                <input type="datetime-local" id="endDateTime" name="endDateTime" required />
+
+                <label for="maximumValue">Maksymalna Wartość:</label>
+                <input type="number" id="maximumValue" name="maximumValue" required />
+
+                <button type="submit">Dodaj Przetarg</button>
+            </form>
+        </div>
+
+    </div>
+</div>
