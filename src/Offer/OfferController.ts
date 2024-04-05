@@ -34,7 +34,8 @@ export const submitOffer = async (req: Request, res: Response) => {
         auctionId
       });
 
-      res.send('Oferta została zgłoszona prawidłowo!');
+      const message = 'Oferta została zgłoszona prawidłowo!';
+      res.render('message', { message });
     }
     else {
       res.send('Oferta nie istnieje lub wygasła');
